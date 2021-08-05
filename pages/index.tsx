@@ -1,19 +1,16 @@
-import React from "react";
+import React, {FC} from "react";
 import { GetStaticProps } from "next";
 import styled from 'styled-components';
 import Layout from "../components/Layout";
 import { Footer } from "../components/Footer";
-
-export const getStaticProps: GetStaticProps = async () => {
-  const feed = []
-  return { props: { feed } }
-}
+import { DatePicker } from 'antd';
+import 'antd/dist/antd.css';
 
 type Props = {
   feed: any[]
 }
 
-const Home: React.FC<Props> = (props) => {
+const Home: FC<Props> = (props) => {
   return (
     <Layout>
       <Container>
@@ -21,6 +18,7 @@ const Home: React.FC<Props> = (props) => {
         <main>
           Name: <input aria-label="Hi" />
         </main>
+        <DatePicker />
         <Footer title='Ali' />
       </Container>
     </Layout>
