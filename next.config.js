@@ -1,8 +1,11 @@
 const webpack = require("webpack");
 
 module.exports = {
-  webpack: function (config, options) {
-    config.experiments = {};
-    return config;
-  },
+    onDemandEntries: {
+        maxInactiveAge: 1000 * 60 * 1000,
+        pagesBufferLength: 1000,
+    },    
+    webpack: (config, { isServer }) => {
+        return config;
+    },
 };
