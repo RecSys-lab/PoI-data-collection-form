@@ -1,23 +1,27 @@
 import React, { FC, ReactNode } from "react";
 import styled from 'styled-components';
 
-import PageHeader from './Header';
-
-import { Layout, Menu } from 'antd';
-const { Header } = Layout;
+import { Layout } from 'antd';
+import { Content } from "antd/lib/layout/layout";
+import { FooterComponent } from "./Footer";
 
 interface LayoutProps {
   children: ReactNode;
 };
+const { Header } = Layout;
 
-const PageLayout: FC<LayoutProps> = (props) => (
-  <AppContainer>
-    <Header className="header">
-      <PageHeader defaultTab='1' />
-    </Header>
-    {props.children}
-  </AppContainer>
-);
+const PageLayout: FC<LayoutProps> = (props) => {
+
+  return (
+  <Layout>
+    <Header>header</Header>
+    {/* <Sider>left sidebar</Sider> */}
+    <Content>{props.children}</Content>
+    {/* <Sider>right sidebar</Sider> */}
+    <FooterComponent />
+  </Layout>
+)
+};
 
 export default PageLayout;
 
