@@ -1,7 +1,8 @@
 import React, { FC, ReactNode } from "react";
+import dynamic from 'next/dynamic';
 import styled from 'styled-components';
 
-import { Layout } from 'antd';
+import { Layout, Menu } from 'antd';
 import { Content } from "antd/lib/layout/layout";
 import { FooterComponent } from "./Footer";
 
@@ -10,14 +11,21 @@ interface LayoutProps {
 };
 const { Header } = Layout;
 
+const DynamicComponentWithNoSSR = dynamic(
+  () => import('./Header'),
+  { ssr: false }
+)
+
 const PageLayout: FC<LayoutProps> = (props) => {
 
   return (
   <Layout>
-    <Header>header</Header>
-    {/* <Sider>left sidebar</Sider> */}
-    <Content>{props.children}</Content>
-    {/* <Sider>right sidebar</Sider> */}
+    <DynamicComponentWithNoSSR />
+    <Content>
+      <AppContainer>
+        {props.children}
+      </AppContainer>
+    </Content>
     <FooterComponent />
   </Layout>
 )
@@ -25,4 +33,6 @@ const PageLayout: FC<LayoutProps> = (props) => {
 
 export default PageLayout;
 
-const AppContainer = styled.div``;
+const AppContainer = styled.div`
+  height: 90vh;
+`;

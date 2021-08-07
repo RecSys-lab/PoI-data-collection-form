@@ -18,8 +18,22 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'prettier',
+    'prefer-arrow'
   ],
   rules: {
-  }
+    // Prettier configurations
+    'prettier/prettier': 'error',
+    // Other
+    'import/first': 'error',
+    'import/no-duplicates': 'error',
+  },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+      plugins: ['@typescript-eslint'],
+    }
+  ]
 }

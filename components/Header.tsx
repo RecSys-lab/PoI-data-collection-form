@@ -6,18 +6,17 @@ const { Header } = Layout;
 
 interface PageHeaderProps {
   logo?: ReactNode;
-  defaultTab: string;
+  defaultTab?: string;
 };
 
-const PageHeader: FC<PageHeaderProps> = ({defaultTab}) => {
-    return <>
-        <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[defaultTab]}>
-            <Menu.Item key="1">Home</Menu.Item>
-            <Menu.Item key="2">Documents</Menu.Item>
-            <Menu.Item key="3">About Us</Menu.Item>
-        </Menu>
-    </>
+const PageHeader: FC<PageHeaderProps> = ({ defaultTab = 'home' }) => {
+  return <Header>
+    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[defaultTab]}>
+      <Menu.Item key="home">Home</Menu.Item>
+      <Menu.Item key="blog">Blog and Updates</Menu.Item>
+      <Menu.Item key="about">About</Menu.Item>
+    </Menu>
+  </Header>
 };
 
 export default PageHeader;

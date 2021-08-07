@@ -19,5 +19,4 @@ const Home: FC<Props> = (props) => {
 export default Home;
 
 const Container = styled.div`
-  background: white;
 `;
