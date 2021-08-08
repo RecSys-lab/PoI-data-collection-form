@@ -16,8 +16,6 @@ const Container = styled.div`
 `;
 
 const FooterStyle: CSSProperties = {
-    bottom: 0,
     width: '100%',
     textAlign: 'center',
-    position: 'absolute',
 }

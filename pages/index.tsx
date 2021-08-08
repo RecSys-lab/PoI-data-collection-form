@@ -1,17 +1,12 @@
 import React, {FC} from "react";
 import styled from 'styled-components';
-import { DatePicker } from 'antd';
 import 'antd/dist/antd.css';
+import { ContentComponent } from "$components/Content";
 
-type Props = {
-  feed: any[]
-}
-
-const Home: FC<Props> = (props) => {
+const Home: FC = () => {
   return (
     <Container>
-      <h1>Sample Text</h1>
-      <DatePicker />
+      <ContentComponent />
     </Container>
   )
 }
@@ -19,4 +14,5 @@ const Home: FC<Props> = (props) => {
 export default Home;
 
 const Container = styled.div`
+height: 100vh;
 `;
