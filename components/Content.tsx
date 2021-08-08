@@ -19,10 +19,9 @@ export const ContentComponent: FC = () => {
     }
 
     return <Container >
-            <Stepper onChange={onChange} currentStep={currentStep}/>
-            <div className="steps-content">{steps[currentStep].content}</div>
-            
-        </Container>
+        <Stepper onChange={onChange} currentStep={currentStep}/>
+        <div className="steps-content">{steps[currentStep].content}</div>   
+      </Container>
 }
 
 const Container = styled.div`

@@ -9,7 +9,6 @@ import { BackTop } from 'antd';
 interface LayoutProps {
   children: ReactNode;
 };
-const { Header } = Layout;
 
 const DynamicComponentWithNoSSR = dynamic(
   () => import('./Header'),

@@ -1,17 +1,17 @@
 import React, {FC} from "react";
 import styled from 'styled-components';
 import 'antd/dist/antd.css';
-import { ContentComponent } from "$components/Content";
+import { Empty } from 'antd';
 
-const Home: FC = () => {
+const Blog: FC = () => {
   return (
     <Container>
-      <ContentComponent />
+      <Empty description='The page is currently under construction' />
     </Container>
   )
 }
 
-export default Home;
+export default Blog;
 
 const Container = styled.div`
   height: 100vh;

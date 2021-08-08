@@ -1,22 +1,28 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import styled from 'styled-components';
-
 import { Layout, Menu } from 'antd';
+import Link from 'next/link'
+
 const { Header } = Layout;
 
 interface PageHeaderProps {
-  logo?: ReactNode;
   defaultTab?: string;
 };
 
 const PageHeader: FC<PageHeaderProps> = ({ defaultTab = 'home' }) => {
   return <Header>
-    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[defaultTab]}>
-      <Menu.Item key="home">Home</Menu.Item>
-      <Menu.Item key="blog">Blog and Updates</Menu.Item>
-      <Menu.Item key="about">About</Menu.Item>
-    </Menu>
-  </Header>
+      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[defaultTab]}>
+        <Menu.Item key="home">
+          <Link href="/">Home</Link>
+        </Menu.Item>
+        <Menu.Item key="blog">
+          <Link href="/blog">Blog</Link>
+        </Menu.Item>
+        <Menu.Item key="about">
+          <Link href="/about">About</Link>
+        </Menu.Item>
+      </Menu>
+    </Header>
 };
 
 export default PageHeader;
