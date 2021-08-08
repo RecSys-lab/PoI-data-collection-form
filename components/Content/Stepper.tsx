@@ -7,19 +7,22 @@ import { steps } from "./Stepper/steps.config";
 const { Step } = Steps;
 
 interface StepperProps {
+  currentStep: number;
   onChange: (current: number) => void;
 };
 
-const Stepper: FC<StepperProps> = ({onChange}) => {
-  
-
-  return <Steps size="small" current={1} onChange={onChange}>
-  {steps.map((step, key) => {
-    return <Step key={key} title={step.title} />
-  })}
-</Steps>
+const Stepper: FC<StepperProps> = ({ currentStep, onChange }) => {
+  return <AppContainer>
+      <Steps size="small" current={currentStep} onChange={onChange}>
+        {steps.map((step, key) => {
+          return <Step key={key} title={step.title} icon={step.icon} />
+        })}
+      </Steps>
+    </AppContainer>
 };
 
 export default Stepper;
 
-const AppContainer = styled.div``;
+const AppContainer = styled.div`
+  margin-bottom: 24px;
+`;

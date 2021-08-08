@@ -4,23 +4,23 @@ import Stepper from "./Content/Stepper";
 import { steps } from "./Content/Stepper/steps.config";
 
 export const ContentComponent: FC = () => {
-    const [current, setCurrent] = React.useState(0);
+    const [currentStep, setCurrentStep] = React.useState(1);
 
     const next = () => {
-        setCurrent(current + 1);
+        setCurrentStep(currentStep + 1);
       };
     
       const prev = () => {
-        setCurrent(current - 1);
+        setCurrentStep(currentStep - 1);
       };
 
-      const onChange = (current: number) => {
-        setCurrent(current);
+      const onChange = (currentStep: number) => {
+        setCurrentStep(currentStep);
     }
 
     return <Container >
-            <Stepper onChange={onChange} />
-            <div className="steps-content">{steps[current].content}</div>
+            <Stepper onChange={onChange} currentStep={currentStep}/>
+            <div className="steps-content">{steps[currentStep].content}</div>
             
         </Container>
 }
