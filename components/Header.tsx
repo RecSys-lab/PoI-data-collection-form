@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 import Link from 'next/link'
 
@@ -26,5 +25,3 @@ const PageHeader: FC<PageHeaderProps> = ({ defaultTab = 'home' }) => {
 };
 
 export default PageHeader;
-
-const AppContainer = styled.div``;

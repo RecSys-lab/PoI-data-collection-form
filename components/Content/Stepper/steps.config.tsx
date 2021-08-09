@@ -6,18 +6,18 @@ import { UserOutlined, SolutionOutlined, CheckOutlined } from '@ant-design/icons
 
 interface Step {
     title: string;
-    content: JSX.Element;
     icon: JSX.Element;
+    content: JSX.Element;
 }
 
 export const steps: Step[] = [
     {
-      title: 'Demographic Information',
+      title: 'Demographic Data',
       content: <StepDemographic />,
       icon: <UserOutlined />,
     },
     {
-      title: 'Personal Information',
+      title: 'Personal Data',
       content: <StepPersonal />,
       icon: <SolutionOutlined />,
     },
