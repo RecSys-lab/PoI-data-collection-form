@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React, { CSSProperties, FC } from "react";
 import Stepper from "./Content/Stepper";
 import { Card } from 'antd';
+import { Row, Col } from 'antd';
 import { steps } from "./Content/Stepper/steps.config";
 
 export const ContentComponent: FC = () => {
@@ -18,10 +19,14 @@ export const ContentComponent: FC = () => {
         setCurrentStep(currentStep);
     }
 
-    return <div >
+    return <Row >
+      <Col span={24} style={ContainerStyle}>
         <Stepper onChange={onChange} currentStep={currentStep}/>
         <Card>
           {steps[currentStep].content}
         </Card>
-      </div>
+        </Col>
+      </Row>
 }
+
+const ContainerStyle: CSSProperties = {}

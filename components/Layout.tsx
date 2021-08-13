@@ -1,9 +1,10 @@
-import React, { FC, ReactNode } from "react";
+import React, { CSSProperties, FC, ReactNode } from "react";
 import dynamic from 'next/dynamic';
 import { Layout } from 'antd';
 import { Content } from "antd/lib/layout/layout";
 import { FooterComponent } from "./Footer";
 import { BackTop } from 'antd';
+import { Row, Col } from 'antd';
 
 interface LayoutProps {
   children: ReactNode;
@@ -21,9 +22,11 @@ const PageLayout: FC<LayoutProps> = (props) => {
     <BackTop duration={1000}/>
     <DynamicComponentWithNoSSR />
     <Content>
-      <div>
-        {props.children}
-      </div>
+      <Row>
+        <Col span={24} style={ContainerStyle}>
+          {props.children}
+        </Col>
+      </Row>
     </Content>
     <FooterComponent />
   </Layout>
@@ -31,3 +34,8 @@ const PageLayout: FC<LayoutProps> = (props) => {
 };
 
 export default PageLayout;
+
+const ContainerStyle: CSSProperties = {
+  padding: '24px',
+  height: '100vh'
+}
