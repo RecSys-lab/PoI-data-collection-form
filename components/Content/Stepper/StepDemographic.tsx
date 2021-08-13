@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Form, InputNumber, Button, Select, Row, Col } from 'antd';
+import { Form, Button, Select, Row, Col } from 'antd';
 import { CountryNames } from "./StepDemographic/countryNames";
 
 const { Option } = Select;
