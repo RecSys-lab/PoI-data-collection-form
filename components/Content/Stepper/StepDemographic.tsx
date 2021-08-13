@@ -51,7 +51,7 @@ const StepDemographic: FC = () => {
       <Row>
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
-            Submit
+            Next
           </Button>
         </Form.Item>
       </Row>
@@ -60,3 +60,5 @@ const StepDemographic: FC = () => {
   };
   
   export default StepDemographic;
+
+  // How muc movie + Social media + privacy + how much safar + age 20 toman pool bashe + 

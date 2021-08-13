@@ -1,5 +1,4 @@
-import React, { FC, ReactNode } from "react";
-import styled from 'styled-components';
+import React, { FC } from "react";
 
 import { Steps } from 'antd';
 import { steps } from "./Stepper/steps.config";
@@ -12,17 +11,13 @@ interface StepperProps {
 };
 
 const Stepper: FC<StepperProps> = ({ currentStep, onChange }) => {
-  return <AppContainer>
+  return <div>
       <Steps size="small" current={currentStep} onChange={onChange}>
         {steps.map((step, key) => {
           return <Step key={key} title={step.title} icon={step.icon} />
         })}
       </Steps>
-    </AppContainer>
+    </div>
 };
 
 export default Stepper;
-
-const AppContainer = styled.div`
-  margin-bottom: 24px;
-`;

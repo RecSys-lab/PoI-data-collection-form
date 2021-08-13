@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from "react";
 import dynamic from 'next/dynamic';
-import styled from 'styled-components';
 import { Layout } from 'antd';
 import { Content } from "antd/lib/layout/layout";
 import { FooterComponent } from "./Footer";
@@ -22,9 +21,9 @@ const PageLayout: FC<LayoutProps> = (props) => {
     <BackTop duration={1000}/>
     <DynamicComponentWithNoSSR />
     <Content>
-      <AppContainer>
+      <div>
         {props.children}
-      </AppContainer>
+      </div>
     </Content>
     <FooterComponent />
   </Layout>
@@ -32,7 +31,3 @@ const PageLayout: FC<LayoutProps> = (props) => {
 };
 
 export default PageLayout;
-
-const AppContainer = styled.div`
-  height: 90vh;
-`;

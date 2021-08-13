@@ -1,8 +1,9 @@
 import React from "react";
 import StepDemographic from "./StepDemographic";
 import StepPersonal from "./StepPersonal";
+import StepPrefrences from "./StepPrefrences";
 import StepRecommendation from "./StepRecommendation";
-import { UserOutlined, SolutionOutlined, CheckOutlined } from '@ant-design/icons';
+import { UserOutlined, SolutionOutlined, CheckOutlined, HeartOutlined } from '@ant-design/icons';
 
 interface Step {
     title: string;
@@ -12,17 +13,22 @@ interface Step {
 
 export const steps: Step[] = [
     {
-      title: 'Demographic Data',
+      title: 'Demographic',
       content: <StepDemographic />,
       icon: <UserOutlined />,
     },
     {
-      title: 'Personal Data',
+      title: 'Personality Assessment',
       content: <StepPersonal />,
       icon: <SolutionOutlined />,
     },
     {
-      title: 'Recommendation',
+      title: 'Preference Eliciation',
+      content: <StepPrefrences />,
+      icon: <HeartOutlined />,
+    },
+    {
+      title: 'Recommendation and Evaluation',
       content: <StepRecommendation />,
       icon: <CheckOutlined />
     },
