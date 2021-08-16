@@ -1,8 +1,9 @@
 import React, { FC } from "react";
-import { Form, Button, Select, Row, Col } from 'antd';
-import { CountryNames } from "./StepDemographic/countryNames";
-
-const { Option } = Select;
+import { Form, Button, Row, Col } from 'antd';
+import { AgeRange } from "./StepDemographic/AgeRange";
+import { Gender } from "./StepDemographic/Gender";
+import { Country } from "./StepDemographic/Country";
+import { Occupation } from "./StepDemographic/Occupation";
 
 const StepDemographic: FC = () => {
 
@@ -25,51 +26,24 @@ const StepDemographic: FC = () => {
     >
       <Row gutter={24}>
         <Col span={8}>
-          <Form.Item
-            name="age"
-            label="Your Age"
-            rules={[{ required: true, message: 'Please enter your age' }]}
-          >
-            <Select
-              placeholder="Please select your age"
-            >
-              <Option value="AG1">Less than 20</Option>
-              <Option value="AG2">Between 20-30</Option>
-              <Option value="AG3">Between 30-40</Option>
-              <Option value="AG4">Between 40-50</Option>
-              <Option value="AG5">Over 50</Option>
-            </Select>
-          </Form.Item>
+          <AgeRange />
         </Col>
         <Col span={8}>
-          <Form.Item
-            name="sex"
-            label="Your Sex"
-            rules={[{ required: true, message: 'Please enter your sex' }]}
-          >
-            <Select
-              placeholder="Please select your gender"
-            >
-              <Option value="Male">Male</Option>
-              <Option value="Female">Female</Option>
-              <Option value="Other">Prefer not to say</Option>
-            </Select>
-          </Form.Item>
+          <Gender />
         </Col>
         <Col span={8}>
-          <Form.Item
-            name="country"
-            label="You are from:"
-            rules={[{ required: true, message: 'Please choose your country' }]}
-          >
-            <Select
-              placeholder="Please choose your country"
-            >
-              {Object.keys(CountryNames).map((country, key) => {
-                return <Option key={key} value={country}>{country}</Option>
-              })}
-            </Select>
-          </Form.Item>
+          <Country />
+        </Col>
+      </Row>
+      <Row gutter={24}>
+        <Col span={8}>
+          <Occupation />
+        </Col>
+        <Col span={8}>
+          <Gender />
+        </Col>
+        <Col span={8}>
+          <Country />
         </Col>
       </Row>
       <Row>
