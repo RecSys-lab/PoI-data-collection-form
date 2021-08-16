@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Row, Col } from 'antd';
 import { Image } from 'antd';
 import { Typography } from 'antd';
+import { PreferencesItems } from "./StepPrefrences/PreferencesItems";
 
 const { Title } = Typography;
 
@@ -10,6 +11,7 @@ const StepPrefrences: FC = () => {
     <Col span={16}>
       <Title level={3}>Let us know more about you!</Title>
       <Title level={5}>Please choose your prefrences from the list below:</Title>
+      <PreferencesItems />
     </Col>
     <Col span={8}>
       <Image

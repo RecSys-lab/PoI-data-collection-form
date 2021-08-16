@@ -20,9 +20,7 @@ export const PersonalForm: FC = () => {
             {
                 personalQuestionBag.map((item, key) => {
                     return <Form.Item key={key} label={item.question} required>
-                        {console.log(item.options)
-                        }
-                    <Select >
+                    <Select>
                         {item.options.map((option, index) => {
                            return <Option key={index} value={option}>{option}</Option>
                         })}
