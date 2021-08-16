@@ -31,9 +31,5 @@ export const personalQuestionBag: Question[] = [
     {
         question: 'what means of transport do you prefer for a journey?',
         options: ['Bicycle and Motorbike', 'Bus, Car, and Caravan', 'Ship', 'Train', 'Airplane']
-    },
-    {
-        question: 'what means of transport do you prefer for a journey?',
-        options: ['', '', '', '', '']
     }
 ];

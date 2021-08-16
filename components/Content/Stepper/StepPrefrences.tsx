@@ -12,11 +12,11 @@ const StepPrefrences: FC = () => {
       <Title level={5}>Please choose your prefrences from the list below:</Title>
     </Col>
     <Col span={8}>
-    <Image
-      width={400}
-      preview={false}
-      src="/tourism.png"
-    />
+      <Image
+        width={400}
+        preview={false}
+        src="/tourism.png"
+      />
     </Col>
   </Row>
   };
