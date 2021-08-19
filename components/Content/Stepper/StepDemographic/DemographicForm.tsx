@@ -4,6 +4,7 @@ import { AgeRange } from "./DemographicForm/AgeRange";
 import { Gender } from "./DemographicForm/Gender";
 import { Country } from "./DemographicForm/Country";
 import { Occupation } from "./DemographicForm/Occupation";
+import { PrivacyCheckbox } from "./DemographicForm/PrivacyCheckbox";
 
 
 interface DemographicFormProps {
@@ -12,10 +13,14 @@ interface DemographicFormProps {
 }
 
 export const DemographicForm: FC<DemographicFormProps> = ({onFinish, onFinishFailed}) => {
+  const onCheckboxClick = (checked: boolean) => {
+    console.log(checked);
+  }
+
    return <Form
       name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
+      // labelCol={{ span: 8 }}
+      // wrapperCol={{ span: 16 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
@@ -36,8 +41,15 @@ export const DemographicForm: FC<DemographicFormProps> = ({onFinish, onFinishFai
           <Occupation />
         </Col>
       </Row>
+      <Row gutter={24}>
+        <Col span={8}>
+          <PrivacyCheckbox onCheckboxClick={onCheckboxClick} />
+        </Col>
+      </Row>
       <Row>
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item 
+        // wrapperCol={{ offset: 8, span: 16 }}
+        >
           <Button type="primary" htmlType="submit">
             Next
           </Button>
