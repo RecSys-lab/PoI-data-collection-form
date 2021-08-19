@@ -1,22 +1,29 @@
 import React, { FC, useState } from "react";
-import { Col, Row, Rate } from "antd";
+import { Col, Row, Rate, Typography } from "antd";
 import { prefrencesBag } from "./prefrencesBag";
 
-const desc = ['Totally Disagree', 'Disagree', 'So-So', 'Agree', 'Totally Agree'];
+const { Text } = Typography;
+
+const tooltips = ['Totally Disagree', 'Disagree', 'So-So', 'Agree', 'Totally Agree'];
 
 export const PreferencesItems: FC = () => {
-    const numberOfItems = prefrencesBag.length;
-    const [rateValue, setRateValue] = useState<number[]>([]);
+    const initiateRateIndices = new Array(prefrencesBag.length).fill(0);
+    const [rateValue, setRateValue] = useState<number[]>(initiateRateIndices);    
 
-    const handleChange = (value) => {
-        setRateValue([value]);
+    const handleChange = (item: any, index: number) => {
+        console.log(item, index);
+        setRateValue([...rateValue, index]);
     };
     
     return <Col span={24}>
         {prefrencesBag.map((item, index) => {
-            return <Row gutter={24}>
-                {item}
-                <Rate tooltips={desc} onChange={() => handleChange(index)} value={rateValue[index]} />
+            return <Row gutter={24} key={index}>
+                <Col span={16} style={{ margin: 'auto 0' }}>
+                    <Text style={{ fontSize: '16px' }}>{item}</Text>
+                </Col>
+                <Col span={8}>
+                    <Rate tooltips={tooltips} onChange={(item) => handleChange(item, index)}/>
+                </Col>
             </Row>;
         })}
     </Col>
