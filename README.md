@@ -2,13 +2,15 @@
 
 Data collection refers to the fundamental stage of gathering observations for later analysis.
 
-## Privacy Issues
+## Stack
 
-Some descriptions...
+- Next.js
+- Prisma
+- PostgreSQL
 
-## Team
+## Privacy Statement
 
-Some descriptions...
+As all other websites and digital products, we also provide a **Privacy Policy** to clarify what we do with the personal data collected from users.
 
 ## TODOs
 
@@ -18,4 +20,4 @@ Some descriptions...
 
 ## References
 
-- SurveyMonkey.com (https://www.surveymonkey.com/r/Quest_tourists_english)
+- [SurveyMonkey.com](https://www.surveymonkey.com/r/Quest_tourists_english "SurveyMonkey.com")
