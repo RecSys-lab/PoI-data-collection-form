@@ -19,6 +19,7 @@
     "paths": {
       "$data/*": ["data/*"],
       "$prisma/*": ["prisma/*"],
+      "$locations/*": ["data/locations/*"],
       "$components/*": ["components/*"],
     },
     "noEmit": true,

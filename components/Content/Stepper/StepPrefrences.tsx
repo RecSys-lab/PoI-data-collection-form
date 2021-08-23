@@ -1,26 +1,27 @@
 import React, { FC } from "react";
 import { Row, Col } from 'antd';
-import { Image } from 'antd';
 import { Typography } from 'antd';
-import { PreferencesItems } from "./StepPrefrences/PreferencesItems";
+import { PrefrencesCard } from "./StepPrefrences/PrefrencesCard";
+import { rasht } from "$data/locations/rasht";
+import { toLocationConverter } from "./StepPrefrences/PrefrencesCard/toLocationConverter";
+import { roudkhanCastle } from "$data/locations/roudkhanCastle";
 
 const { Title } = Typography;
 
 const StepPrefrences: FC = () => {
-  return <Row gutter={24}>
-      <Col span={16}>
+  const item = toLocationConverter(rasht);
+  const item2 = toLocationConverter(roudkhanCastle);
+
+  return <Col span={24}>
+      <Row gutter={24} style={{ display: "block"}}>
         <Title level={3}>Let us know more about you!</Title>
         <Title level={5}>Please choose your prefrences from the list below:</Title>
-        <PreferencesItems />
-      </Col>
-      <Col span={8}>
-        <Image
-          width={400}
-          preview={false}
-          src="/user-rating.png"
-        />
-      </Col>
-    </Row>
+      </Row>
+      <Row gutter={24}>
+        <PrefrencesCard item={item} />
+        <PrefrencesCard item={item2} />
+      </Row>
+    </Col>
   };
   
   export default StepPrefrences;
