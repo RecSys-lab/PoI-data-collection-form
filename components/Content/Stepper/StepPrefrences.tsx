@@ -17,9 +17,25 @@ const StepPrefrences: FC = () => {
         <Title level={3}>Let us know more about you!</Title>
         <Title level={5}>Please choose your prefrences from the list below:</Title>
       </Row>
-      <Row gutter={24}>
-        <PrefrencesCard item={item} />
-        <PrefrencesCard item={item2} />
+      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+        <Col className="gutter-row" span={4}>
+          <PrefrencesCard item={item} />
+        </Col>
+        <Col className="gutter-row" span={4}>
+          <PrefrencesCard item={item2} />
+        </Col>
+        <Col className="gutter-row" span={4}>
+          <PrefrencesCard item={item} />
+        </Col>
+        <Col className="gutter-row" span={4}>
+          <PrefrencesCard item={item2} />
+        </Col>
+        <Col className="gutter-row" span={4}>
+          <PrefrencesCard item={item} />
+        </Col>
+        <Col className="gutter-row" span={4}>
+          <PrefrencesCard item={item} />
+        </Col>
       </Row>
     </Col>
   };

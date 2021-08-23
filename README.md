@@ -14,7 +14,7 @@ Some descriptions...
 
 - Prisma create database for locations
 - Locations data should be imported to PostgreSQL database
-- Search for APIs to fill database
+- Search for APIs to fill database (https://stackoverflow.com/questions/8555320/is-there-a-wikipedia-api-just-for-retrieve-the-content-summary)
 
 ## References
 

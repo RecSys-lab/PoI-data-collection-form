@@ -6,7 +6,7 @@ export const toLocationConverter = (item: any): ILocation => {
         title: item.displaytitle,
         description: item.description,
         thumbnail: item.thumbnail.source,
-        richTextDescription: item.extract_html,
+        richTextDescription: item.extract,
         pageAddress: item.content_urls.desktop.page,
         coordinates: {
             lattitude: item.coordinates.lat,
